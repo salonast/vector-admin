@@ -5,6 +5,10 @@ FROM ubuntu:jammy-20230522 AS base
 ARG ARG_UID
 ARG ARG_GID
 
+ARG API_BASE
+ENV VITE_API_BASE=$API_BASE
+
+
 RUN apt-get update && \
     apt-get install -y curl gnupg && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \

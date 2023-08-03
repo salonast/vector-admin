@@ -22,6 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
         libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 \
         libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release \
         xdg-utils && \
+    apt-get remove -y libnode72 && \
     curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -yq --no-install-recommends nodejs && \
     curl -LO https://github.com/yarnpkg/yarn/releases/download/v1.22.19/yarn_1.22.19_all.deb \
@@ -33,6 +34,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     rm -rf /var/lib/apt/lists/* /usr/share/icons && \
     dpkg-reconfigure -f noninteractive tzdata && \
     python3 -m pip install --no-cache-dir virtualenv
+
 
 # Create a group and user with specific UID and GID
 RUN groupadd -g $ARG_GID anythingllm && \

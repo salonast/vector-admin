@@ -15,6 +15,7 @@ services:
       args:
         ARG_UID: ${UID}
         ARG_GID: ${GID}
+        API_BASE: https://vector-admin-yy2d.onrender.com/api
     user: "${UID}:${GID}"
     ports:
       - "3001:3001"

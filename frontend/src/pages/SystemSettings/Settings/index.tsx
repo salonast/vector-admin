@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { APP_NAME } from '../../../utils/constants';
 import System from '../../../models/system';
 import { ExternalLink, Eye, EyeOff } from 'react-feather';
